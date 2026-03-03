@@ -1,129 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Laporan Materi Ajar – OOP Dart</title>
+    <meta charset="UTF-8">
+    <title>Laporan Materi OOP Dart</title>
+    <h1>Nama : Putri Ananda Amelia Nim: 251410005</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #00ff88;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #e6f4f1;
-      margin: 0;
-      padding: 0;
-      color: #2c3e3a;
-      line-height: 1.6;
-    }
+        .btn-dart {
+            background-color: #ff4da6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    header {
-      background-color: #2eccb0;
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
+        .btn-dart:hover {
+            background-color: #e60073;
+        }
 
-    section {
-      background-color: #f0fbf8;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
 
-    h2 {
-      color: #1e8f7a;
-      border-bottom: 2px solid #7fe0cc;
-      padding-bottom: 6px;
-    }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+            position: relative;
+        }
 
-    pre {
-      background-color: #1f2d2b;
-      color: #e8fdf8;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 14px;
-    }
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff4da6;
+        }
 
-    .btn {
-      background-color: #2eccb0;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 15px;
-      margin-top: 10px;
-    }
-
-    /* POPUP */
-    #popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 999;
-    }
-
-    .popup-content {
-      background: white;
-      width: 90%;
-      height: 80%;
-      margin: 5% auto;
-      border-radius: 12px;
-      position: relative;
-      padding: 10px;
-    }
-
-    .popup-content iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .close {
-      position: absolute;
-      top: 8px;
-      right: 15px;
-      font-size: 26px;
-      cursor: pointer;
-      color: #1e8f7a;
-      font-weight: bold;
-    }
-  </style>
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Laporan Materi Ajar</h1>
-  <p>Sesi 1: Pengantar OOP dan Dasar Kelas di Dart</p>
-</header>
+<h1>LAPORAN MATERI OBJECT ORIENTED PROGRAMMING (OOP) - DART</h1>
 
-<section>
-  <h2>Pendahuluan</h2>
-  <p>
-    Object Oriented Programming (OOP) merupakan paradigma pemrograman
-    yang berfokus pada objek sebagai unit utama dengan data dan perilaku.
-  </p>
-</section>
+<div class="section box">
+<h2>1. Pengertian OOP</h2>
+<p>
+Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek.
+Objek dibuat dari sebuah kelas (class) yang berisi atribut (data) dan method (fungsi).
+</p>
 
-<section>
-  <h2>Konsep Dasar OOP</h2>
-  <ul>
-    <li>Kelas sebagai blueprint.</li>
-    <li>Objek sebagai instance.</li>
-    <li>Atribut sebagai data.</li>
-    <li>Metode sebagai perilaku.</li>
-  </ul>
-</section>
+<p>Konsep utama OOP:</p>
+<ul>
+<li>Class dan Object</li>
+<li>Encapsulation</li>
+<li>Constructor</li>
+<li>Method</li>
+</ul>
+</div>
 
-<section>
-  <h2>Contoh Implementasi Kelas di Dart</h2>
+<div class="section box">
+<h2>2. Contoh Class dan Object (Tanpa Constructor)</h2>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
 
-  <pre>
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+</code></pre>
+<p>
+Pada contoh ini, class Car memiliki atribut model dan color serta method start() dan stop().
+Objek dibuat menggunakan Car().
+</p>
+</div>
+
+<div class="section box">
+<h2>3. Constructor</h2>
+<pre><code>
 class Car {
   String? model;
   String? color;
@@ -131,51 +127,133 @@ class Car {
   Car(this.model, this.color);
 
   void start() {
-    print('Mobil $model warna $color berjalan');
+    print('Car started!');
   }
 }
+</code></pre>
+<p>
+Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat.
+</p>
+</div>
 
-void main() {
-  Car myCar = Car('Sedan', 'Hijau');
-  myCar.start();
+<div class="section box">
+<h2>4. Validasi Data (Class Mahasiswa)</h2>
+<pre><code>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk) {
+    if (ipk < 0.0 || ipk > 4.0) {
+      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
+    }
+  }
 }
-  </pre>
+</code></pre>
+<p>
+Contoh ini menunjukkan validasi data pada constructor untuk memastikan IPK dalam rentang 0.0 - 4.0.
+</p>
+</div>
 
-  <!-- TOMBOL -->
-  <button class="btn" onclick="openDartpad()">
-    Lihat & Jalankan Source Code (DartPad)
-  </button>
-</section>
+<div class="section box">
+<h2>5. Encapsulation</h2>
+<pre><code>
+class Person {
+  String _name;
+  int age;
 
-<section>
-  <h2>Kesimpulan</h2>
-  <p>
-    Penerapan OOP pada bahasa Dart membantu pengembang membuat aplikasi
-    yang lebih terstruktur, mudah dikembangkan, dan mudah dipelihara.
-    Konsep ini sangat penting terutama dalam pengembangan aplikasi Flutter.
-  </p>
-</section>
+  Person(this._name, this.age);
 
-<!-- POPUP -->
-<div id="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closeDartpad()">×</span>
+  void setName(String name) {
+    _name = name;
+  }
 
-    <iframe
-      src="https://dartpad.dev/?id=23472242892fdfc89f650da38e75022d">
-    </iframe>
+  String getName() {
+    return _name;
+  }
+}
+</code></pre>
+<p>
+Encapsulation membatasi akses langsung ke atribut menggunakan setter dan getter.
+</p>
+</div>
 
-  </div>
+<div class="section box">
+<h2>6. Constructor dengan Named Parameter</h2>
+<pre><code>
+class Produk {
+  final String id;
+  final String nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
+  });
+}
+</code></pre>
+<p>
+Named parameter constructor membuat kode lebih rapi dan mudah dibaca.
+</p>
+</div>
+
+<div class="section box">
+<h2>7. Kesimpulan</h2>
+<p>
+OOP mempermudah pengelolaan program besar karena kode lebih terstruktur,
+mudah dikembangkan, dan lebih aman melalui konsep enkapsulasi.
+Paradigma ini sangat cocok digunakan dalam pembuatan aplikasi skala menengah hingga besar.
+</p>
+</div>
+
+<div class="section box">
+<h2>Tugas Bonus</h2>
+<p>
+Bonus 10 poin diberikan bagi siswa yang mengerjakan soal nomor 3 halaman 15.
+Tugas bonus hanya diterima jika tugas utama (laporan HTML) sudah dinyatakan benar.
+</p>
+</div>
+
+<div class="section box" style="text-align:center;">
+    <h2>Demo Interaktif DartPad</h2>
+    <button class="btn-dart" onclick="openModal()">Buka DartPad </button>
+</div>
+
+<div id="dartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <iframe 
+            src="https://dartpad.dev/?id=23472242892fdfc89f650da38e75022d"
+            width="100%" 
+            height="500"
+            frameborder="0">
+        </iframe>
+
+    </div>
 </div>
 
 <script>
-  function openDartpad() {
-    document.getElementById("popup").style.display = "block";
-  }
+function openModal() {
+    document.getElementById("dartModal").style.display = "block";
+}
 
-  function closeDartpad() {
-    document.getElementById("popup").style.display = "none";
-  }
+function closeModal() {
+    document.getElementById("dartModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById("dartModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 
 </body>
