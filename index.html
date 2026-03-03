@@ -18,22 +18,23 @@ h1 {
   text-align: center;
   color: #ff4da6;
   margin-bottom: 10px;
+  text-shadow: 0 0 10px #ff4da6;
 }
 
 .identitas {
   text-align: center;
   color: #ff99cc;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   line-height: 1.6;
 }
 
 .section {
   border: 2px solid #ff4da6;
   padding: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   border-radius: 12px;
   background-color: #1a1a22;
-  box-shadow: 0 0 15px rgba(255,77,166,0.3);
+  box-shadow: 0 0 20px rgba(255,77,166,0.3);
 }
 
 h2 {
@@ -43,15 +44,40 @@ h2 {
 
 p {
   color: #dddddd;
-  line-height: 1.7;
+  line-height: 1.8;
   text-align: justify;
+}
+
+/* PREVIEW STYLE */
+.preview-box {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
+  color: #00ff88;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+.preview-label {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background-color: #ff4da6;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 10px #ff4da6;
 }
 
 iframe {
   width: 100%;
   height: 500px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 </style>
 </head>
@@ -66,80 +92,160 @@ NIM: 251410022 <br>
 Kelas: SI2A
 </div>
 
+<!-- PENGERTIAN OOP -->
 <div class="section">
 <h2>Pengertian OOP</h2>
 <p>
-Object Oriented Programming (OOP) adalah paradigma atau metode pemrograman yang berfokus pada objek sebagai komponen utama dalam membangun sebuah program. Dalam OOP, program tidak hanya terdiri dari kumpulan instruksi, tetapi dibangun dari objek-objek yang memiliki data (state) dan perilaku (behavior). Konsep ini meniru dunia nyata, di mana setiap benda memiliki karakteristik dan fungsi tertentu. OOP bertujuan untuk membuat kode lebih terstruktur, mudah dipahami, mudah dikembangkan, serta dapat digunakan kembali.
+Object Oriented Programming (OOP) adalah paradigma atau metode pemrograman yang berfokus pada objek sebagai komponen utama dalam membangun sebuah program. Dalam OOP, program dibangun dari objek-objek yang memiliki data (state) dan perilaku (behavior).
 </p>
 </div>
 
+<!-- OBJEK DAN KELAS -->
 <div class="section">
 <h2>Objek, Kelas, dan Konsep Dasar</h2>
 <p>
-Kelas adalah cetakan atau rancangan untuk membuat objek. Objek adalah hasil dari kelas yang memiliki atribut (data) dan metode (fungsi). Kelas menentukan bagaimana objek dibuat dan bagaimana objek tersebut bekerja.
+Kelas adalah cetakan untuk membuat objek. Objek adalah hasil dari kelas yang memiliki atribut (data) dan metode (fungsi).
 </p>
 </div>
 
+<!-- CLASS CAR -->
 <div class="section">
 <h2>Class Sederhana (Car)</h2>
-<p>
-Aturan penulisan struktur kelas di Dart terdiri dari atribut dan metode. Penulisannya diawali dengan kata kunci class, kemudian nama kelas dan isi kelas ditulis di dalam tanda kurung kurawal { }.
-</p>
+<p>Contoh struktur dasar class di Dart.</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=23472242892fdfc89f650da38e75022d"></iframe>
 </div>
 
+<!-- OBJECT -->
 <div class="section">
 <h2>Membuat Objek dari Kelas</h2>
-<p>
-Membuat objek adalah proses menghasilkan instance dari sebuah kelas agar dapat digunakan dalam program. Setelah objek dibuat, atribut dan metode dalam kelas dapat diakses melalui objek tersebut.
-</p>
+<p>Membuat instance dari class agar dapat digunakan dalam program.</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+void main() {
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
+
+  myCar.start();
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=62f1da03df22947ecfecc5333e04e1f5"></iframe>
 </div>
 
+<!-- CONSTRUCTOR -->
 <div class="section">
 <h2>Constructors</h2>
-<p>
-Constructor adalah metode khusus dalam kelas yang digunakan untuk menginisialisasi atau memberikan nilai awal pada objek saat objek dibuat.
-</p>
+<p>Constructor digunakan untuk menginisialisasi nilai awal saat objek dibuat.</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Car {
+  String? model;
+  String? color;
+
+  Car(this.model, this.color);
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=6580bfb376fe6cb931d6bb42573093d6"></iframe>
 </div>
 
+<!-- MAHASISWA -->
 <div class="section">
 <h2>Latihan: Class Mahasiswa</h2>
-<p>
-Latihan ini bertujuan untuk melatih pembuatan class sederhana di Dart. Kita membuat class Mahasiswa yang memiliki atribut seperti nama, nim, dan ipk, serta method untuk menampilkan data. Tujuannya agar memahami cara membuat class, membuat objek, dan memanggil method dalam konsep OOP.
-</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=2c7908b57357a9639084988ed7a3550c"></iframe>
 </div>
 
+<!-- ENCAPSULATION -->
 <div class="section">
 <h2>Encapsulation</h2>
-<p>
-Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam satu kelas serta membatasi akses langsung ke data tersebut. Tujuannya untuk menjaga keamanan data agar tidak bisa diubah sembarangan dari luar kelas. Biasanya digunakan dengan membuat atribut menjadi private dan mengaksesnya melalui getter dan setter.
-</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Person {
+  String _name;
+  int _age;
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=a4e2c1bfae522272e2f57e3da7113a69"></iframe>
 </div>
 
+<!-- THIS -->
 <div class="section">
 <h2>This Keyword</h2>
-<p>
-This adalah kata kunci yang digunakan untuk merujuk pada objek atau instance yang sedang aktif di dalam kelas.
-</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Product {
+  String nama;
+  Product(this.nama);
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=6d87ddec40cc22e109c908f5079f0ab6"></iframe>
 </div>
 
+<!-- PRODUK -->
 <div class="section">
 <h2>Latihan: Class Produk</h2>
-<p>
-Latihan ini bertujuan untuk membuat class Produk dengan beberapa atribut seperti id, nama, harga, dan stok, serta menggunakan constructor untuk mengisi data saat objek dibuat. Tujuannya agar memahami cara membuat class, constructor, dan membuat beberapa objek berbeda dalam konsep OOP.
-</p>
+
+<div class="preview-box">
+<div class="preview-label">DART // RUNTIME</div>
+<pre>
+class Produk {
+  final String id;
+  final String nama;
+  final double harga;
+}
+</pre>
+</div>
+
 <iframe src="https://dartpad.dev/embed-inline.html?id=bdc1f5d0ccd35f8d7b001d20f571d577"></iframe>
 </div>
 
+<!-- KESIMPULAN -->
 <div class="section">
 <h2>Kesimpulan</h2>
 <p>
-OOP adalah metode pemrograman yang berfokus pada objek yang memiliki data dan fungsi. Dalam Dart, konsep seperti kelas, objek, constructor, dan this digunakan untuk membangun program yang lebih terstruktur dan mudah dikembangkan. Pemahaman dasar OOP sangat penting sebagai fondasi dalam pembuatan aplikasi.
+OOP adalah metode pemrograman yang berfokus pada objek yang memiliki data dan fungsi. Konsep seperti class, object, constructor, dan this membantu membuat program lebih terstruktur dan mudah dikembangkan.
 </p>
 </div>
 
