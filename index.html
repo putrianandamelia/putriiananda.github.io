@@ -2,55 +2,57 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Laporan Materi Ajar OOP Dart</title>
+  <title>Laporan Materi Ajar – OOP Dart</title>
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffe6f2;
+      background-color: #e6f4f1;
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #2c3e3a;
+      line-height: 1.6;
     }
 
     header {
-      background: #ff66b2;
+      background-color: #2eccb0;
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
     }
 
     section {
-      padding: 20px;
+      background-color: #f0fbf8;
       margin: 20px;
-      background: #fff0f7;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: #cc0066;
-      border-bottom: 2px solid #ff99cc;
-      padding-bottom: 5px;
+      color: #1e8f7a;
+      border-bottom: 2px solid #7fe0cc;
+      padding-bottom: 6px;
     }
 
     pre {
-      background: #2b2b2b;
-      color: #f8f8f2;
+      background-color: #1f2d2b;
+      color: #e8fdf8;
       padding: 15px;
       border-radius: 8px;
       overflow-x: auto;
+      font-size: 14px;
     }
 
     .btn {
-      background: #ff69b4;
+      background-color: #2eccb0;
       color: white;
-      padding: 12px 20px;
       border: none;
+      padding: 12px 20px;
       border-radius: 20px;
       cursor: pointer;
-      font-size: 16px;
-      margin-top: 15px;
+      font-size: 15px;
+      margin-top: 10px;
     }
 
     /* POPUP */
@@ -87,7 +89,7 @@
       right: 15px;
       font-size: 26px;
       cursor: pointer;
-      color: hotpink;
+      color: #1e8f7a;
       font-weight: bold;
     }
   </style>
@@ -97,64 +99,61 @@
 
 <header>
   <h1>Laporan Materi Ajar</h1>
-  <p>Pengantar OOP dan Dasar Kelas di Dart</p>
+  <p>Sesi 1: Pengantar OOP dan Dasar Kelas di Dart</p>
 </header>
 
 <section>
-  <h2>Pendahuluan OOP</h2>
+  <h2>Pendahuluan</h2>
   <p>
-    Object Oriented Programming (OOP) adalah paradigma pemrograman
-    yang berfokus pada objek sebagai unit utama. OOP membuat kode
-    lebih terstruktur, mudah dipelihara, dan dapat digunakan kembali.
+    Object Oriented Programming (OOP) merupakan paradigma pemrograman
+    yang berfokus pada objek sebagai unit utama dengan data dan perilaku.
   </p>
 </section>
 
 <section>
-  <h2>Konsep Dasar: Kelas dan Objek</h2>
-  <p>
-    Kelas adalah blueprint atau cetakan, sedangkan objek adalah
-    hasil nyata dari kelas tersebut. Kelas memiliki atribut dan metode.
-  </p>
+  <h2>Konsep Dasar OOP</h2>
+  <ul>
+    <li>Kelas sebagai blueprint.</li>
+    <li>Objek sebagai instance.</li>
+    <li>Atribut sebagai data.</li>
+    <li>Metode sebagai perilaku.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>Contoh Kode: Kelas dan Objek</h2>
+  <h2>Contoh Implementasi Kelas di Dart</h2>
 
   <pre>
 class Car {
   String? model;
   String? color;
 
-  void start() {
-    print('Car started!');
-  }
+  Car(this.model, this.color);
 
-  void stop() {
-    print('Car stopped!');
+  void start() {
+    print('Mobil $model warna $color berjalan');
   }
 }
 
 void main() {
-  Car myCar = Car();
-  myCar.model = "Sedan";
-  myCar.color = "Merah";
+  Car myCar = Car('Sedan', 'Hijau');
   myCar.start();
-  myCar.stop();
 }
   </pre>
 
+  <!-- TOMBOL -->
   <button class="btn" onclick="openDartpad()">
-    Lihat Source Code di DartPad
+    Lihat & Jalankan Source Code (DartPad)
   </button>
 </section>
 
 <section>
-  <h2>Ringkasan</h2>
-  <ul>
-    <li>OOP berfokus pada objek dan interaksi.</li>
-    <li>Kelas adalah blueprint, objek adalah instance.</li>
-    <li>Constructor digunakan untuk inisialisasi data.</li>
-  </ul>
+  <h2>Kesimpulan</h2>
+  <p>
+    Penerapan OOP pada bahasa Dart membantu pengembang membuat aplikasi
+    yang lebih terstruktur, mudah dikembangkan, dan mudah dipelihara.
+    Konsep ini sangat penting terutama dalam pengembangan aplikasi Flutter.
+  </p>
 </section>
 
 <!-- POPUP -->
