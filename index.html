@@ -143,6 +143,9 @@ class Car {
   void start() {
     print('Car started!');
   }
+  void stop() {
+    print('Car stopped!');
+  }
 }
 </pre>
 </div>
@@ -170,6 +173,7 @@ void main() {
   myCar.color = "Merah";
 
   myCar.start();
+  myCar.stop();
 }
 </pre>
 </div>
@@ -247,6 +251,12 @@ Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam 
 class Person {
   String _name;
   int _age;
+
+  Person(this._name, this.age);
+
+  void setName(String name) { _name = name;
+  String getName() {
+  return_name;
 }
 </pre>
 </div>
@@ -297,7 +307,17 @@ class Produk {
   final String id;
   final String nama;
   final double harga;
-}
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0
+    this.kategori = 'Umum',
+  });
+    
 </pre>
 </div>
 
