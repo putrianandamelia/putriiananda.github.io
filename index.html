@@ -88,16 +88,16 @@ Object Oriented Programming (OOP) adalah paradigma atau metode pemrograman yang 
 </div>
 
 <div class="section">
-<h2>Objek, Kelas, dan Konsep Dasar</h2>
+<h2>Object, Class, dan Konsep Dasar</h2>
 <p>
-Kelas adalah cetakan atau rancangan untuk membuat objek. Objek adalah hasil dari kelas yang memiliki atribut (data) dan metode (fungsi). Kelas menentukan bagaimana objek dibuat dan bagaimana objek tersebut bekerja.
+Class adalah cetakan atau rancangan untuk membuat object. Object adalah hasil dari class yang memiliki atribut (data) dan metode (fungsi). class menentukan bagaimana object dibuat dan bagaimana object tersebut bekerja.
 </p>
 </div>
 
 <div class="section">
 <h2>Class Sederhana (Car)</h2>
 <p>
-Aturan penulisan struktur kelas di Dart terdiri dari atribut dan metode. Penulisannya diawali dengan kata kunci class, kemudian nama kelas dan isi kelas ditulis di dalam tanda kurung kurawal { }. berikut contoh nya.
+Aturan penulisan struktur class di Dart terdiri dari atribut dan metode. Penulisannya diawali dengan kata kunci class, kemudian nama kelas dan isi kelas ditulis di dalam tanda kurung kurawal { }. berikut contoh nya.
 </p>
 
 <div class="preview-box">
@@ -117,9 +117,9 @@ class Car {
 </div>
 
 <div class="section">
-<h2>Membuat Objek dari Kelas</h2>
+<h2>Membuat Object dari Class</h2>
 <p>
-Membuat objek adalah proses menghasilkan instance dari sebuah kelas agar dapat digunakan dalam program. Setelah objek dibuat, atribut dan metode dalam kelas dapat diakses melalui objek tersebut.
+Membuat object adalah proses menghasilkan instance dari sebuah class agar dapat digunakan dalam program. Setelah object dibuat, atribut dan metode dalam class dapat diakses melalui object tersebut.
 </p>
 
 <div class="preview-box">
@@ -140,7 +140,7 @@ void main() {
 <div class="section">
 <h2>Constructors</h2>
 <p>
-Constructor adalah metode khusus dalam kelas yang digunakan untuk menginisialisasi atau memberikan nilai awal pada objek saat objek dibuat.
+Constructor adalah metode khusus dalam class yang digunakan untuk menginisialisasi atau memberikan nilai awal pada object saat object dibuat.
 </p>
 
 <div class="preview-box">
@@ -181,7 +181,7 @@ class Mahasiswa {
 <div class="section">
 <h2>Encapsulation</h2>
 <p>
-Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam satu kelas serta membatasi akses langsung ke data tersebut. Tujuannya untuk menjaga keamanan data agar tidak bisa diubah sembarangan dari luar kelas. Biasanya digunakan dengan membuat atribut menjadi private dan mengaksesnya melalui getter dan setter.
+Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam satu class serta membatasi akses langsung ke data tersebut. Tujuannya untuk menjaga keamanan data agar tidak bisa diubah sembarangan dari luar class. Biasanya digunakan dengan membuat atribut menjadi private dan mengaksesnya melalui getter dan setter.
 </p>
 
 <div class="preview-box">
@@ -199,7 +199,7 @@ class Person {
 <div class="section">
 <h2>This Keyword</h2>
 <p>
-this adalah kata kunci yang digunakan untuk merujuk pada objek atau instance yang sedang aktif di dalam kelas.
+this adalah kata kunci yang digunakan untuk merujuk pada object atau instance yang sedang aktif di dalam class.
 </p>
 
 <div class="preview-box">
@@ -237,8 +237,54 @@ class Produk {
 <div class="section">
 <h2>Kesimpulan</h2>
 <p>
-OOP adalah metode pemrograman yang berfokus pada objek yang memiliki data dan fungsi. Dalam Dart, konsep seperti kelas, objek, constructor, dan this digunakan untuk membangun program yang lebih terstruktur dan mudah dikembangkan. Pemahaman dasar OOP sangat penting sebagai fondasi dalam pembuatan aplikasi.
+OOP adalah metode pemrograman yang berfokus pada object yang memiliki data dan fungsi. Dalam Dart, konsep seperti class, object, constructor, dan this digunakan untuk membangun program yang lebih terstruktur dan mudah dikembangkan. Pemahaman dasar OOP sangat penting sebagai fondasi dalam pembuatan aplikasi.
 </p>
+</div>
+
+<div class="section">
+
+<h1>Tugas 2 Bonus: Class Hewan</h1>
+
+<h2>Penjelasan</h2>
+<p>
+Program ini merupakan contoh sederhana penerapan konsep Object Oriented Programming (OOP).
+Pada program ini dibuat sebuah class bernama <b>Hewan</b> yang memiliki satu atribut yaitu
+<em>nama</em> dan satu method yaitu <em>bersuara()</em>. Objek dibuat dengan nama "Ayam",
+kemudian method dipanggil untuk menampilkan output ke layar.
+</p>
+
+<h2>Preview Output</h2>
+<div class="preview-box">
+Nama Hewan: Ayam<br>
+Ayam sedang bersuara...
+</div>
+
+<h2>Source Code</h2>
+<div class="preview-box">
+<pre>
+class Hewan {
+  String nama;
+
+  Hewan(this.nama);
+
+  void bersuara() {
+    print("$nama sedang bersuara...");
+  }
+}
+
+void main() {
+  var myPet = Hewan("Ayam");
+  print("Nama Hewan: ${myPet.nama}");
+  myPet.bersuara();
+}
+</pre>
+</div>
+
+<h2>Run di DartPad</h2>
+<iframe 
+src="https://dartpad.dev/embed-inline.html?id=598ae52104c6319fa95a5ae2002d67a5"
+></iframe>
+
 </div>
 
 </body>
