@@ -6,89 +6,86 @@
 <title>Laporan OOP</title>
 
 <style>
-body {
-  margin: 0;
-  padding: 40px;
-  background-color: #0f0f14;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
+body{
+  margin:0;
+  padding:40px;
+  background:#0f0f14;
+  font-family:Arial, sans-serif;
+  color:white;
 }
 
-h1 {
-  text-align: center;
-  color: #ff4da6;
-  margin-bottom: 15px;
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 2px;
+h1{
+  text-align:center;
+  color:#ff4da6;
 }
 
-.identitas {
-  text-align: center;
-  color: #ff99cc;
-  margin-bottom: 50px;
-  line-height: 1.6;
-  font-size: 16px;
+.section{
+  border:2px solid #ff4da6;
+  padding:25px;
+  margin-bottom:40px;
+  border-radius:12px;
+  background:#1a1a22;
 }
 
-.section {
-  border: 2px solid #ff4da6;
-  padding: 25px;
-  margin-bottom: 50px;
-  border-radius: 12px;
-  background-color: #1a1a22;
+.preview-box{
+  background:black;
+  padding:20px;
+  border-radius:10px;
+  margin-top:15px;
+  color:#00ff88;
+  font-family:monospace;
 }
 
-h2 {
-  color: #ff4da6;
-  margin-top: 0;
+.btn-run{
+  background:#ff4da6;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:15px;
 }
 
-p {
-  color: #dddddd;
-  line-height: 1.8;
-  text-align: justify;
+.btn-run:hover{
+  background:#ff1a8c;
 }
 
-.preview-box {
-  background-color: #000;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  color: #00ff88;
-  font-family: monospace;
-  overflow-x: auto;
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
 }
 
-iframe {
-  width: 100%;
-  height: 500px;
-  border-radius: 10px;
-  margin-top: 25px;
-  border: none;
-}
-  
-.btn-run {
-  background-color: #ff4da6;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: 0.3s;
+.popup-box{
+  width:95%;
+  max-width:1000px;
+  background:#1a1a22;
+  padding:20px;
+  border-radius:10px;
+  position:relative;
+  border:2px solid #ff4da6;
 }
 
-.btn-run:hover {
-  background-color: #ff1a8c;
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+  color:#ff4da6;
 }
 
-.dart-container {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
+iframe{
+  width:100%;
+  height:520px;
+  border:none;
+  margin-top:20px;
 }
 </style>
 </head>
@@ -139,16 +136,10 @@ class Car {
 }
 </pre>
 </div>
-
-<button class="btn-run" onclick="toggleDartpad(this, 'dartCar')">
+  
+<button class="btn-run" onclick="openPopup('23472242892fdfc89f650da38e75022d')">
 Run di DartPad
 </button>
-
-<div id="dartCar" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=23472242892fdfc89f650da38e75022d"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -173,15 +164,9 @@ void main() {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartObjek')">
+<button class="btn-run" onclick="openPopup('62f1da03df22947ecfecc5333e04e1f5')">
 Run di DartPad
 </button>
-
-<div id="dartObjek" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=62f1da03df22947ecfecc5333e04e1f5"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -205,15 +190,9 @@ class Car {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartConstructor')">
+<button class="btn-run" onclick="openPopup('6580bfb376fe6cb931d6bb42573093d6')">
 Run di DartPad
 </button>
-
-<div id="dartConstructor" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=6580bfb376fe6cb931d6bb42573093d6"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -238,14 +217,9 @@ class Mahasiswa {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartMahasiswa')">
+<button class="btn-run" onclick="openPopup('2c7908b57357a9639084988ed7a3550c')">
 Run di DartPad
 </button>
-
-<div id="dartMahasiswa" class="dart-container">
-src="https://dartpad.dev/embed-flutter.html?id=2c7908b57357a9639084988ed7a3550c"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -267,15 +241,9 @@ class Person {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartEncapsulation')">
+<button class="btn-run" onclick="openPopup('a4e2c1bfae522272e2f57e3da7113a69')">
 Run di DartPad
 </button>
-
-<div id="dartEncapsulation" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=a4e2c1bfae522272e2f57e3da7113a69"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -298,15 +266,9 @@ class Product {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartKeyword')">
+<button class="btn-run" onclick="openPopup('6d87ddec40cc22e109c908f5079f0ab6')">
 Run di DartPad
 </button>
-
-<div id="dartKeyword" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=6d87ddec40cc22e109c908f5079f0ab6"></iframe>
-</div>
-  
 </div>
 
 <div class="section">
@@ -329,16 +291,11 @@ class Produk {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartProduk')">
+<button class="btn-run" onclick="openPopup('bdc1f5d0ccd35f8d7b001d20f571d577')">
 Run di DartPad
 </button>
+</div>
 
-<div id="dartProduk" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=bdc1f5d0ccd35f8d7b001d20f571d577"></iframe>
-</div>
-  
-</div>
 
 <div class="section">
 <h2>Kesimpulan</h2>
@@ -382,30 +339,30 @@ void main() {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad(this, 'dartHewan')">
+<button class="btn-run" onclick="openPopup('598ae52104c6319fa95a5ae2002d67a5')">
 Run di DartPad
 </button>
-
-<div id="dartHewan" class="dart-container">
-<iframe 
-src="https://dartpad.dev/embed-flutter.html?id=598ae52104c6319fa95a5ae2002d67a5"
-></iframe>
 </div>
 
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <span class="close" onclick="closePopup()">❌</span>
+    <iframe id="dartFrame"></iframe>
+  </div>
 </div>
-  
+
 <script>
-function toggleBox(button, id) {
-  var box = document.getElementById(id);
+function openPopup(id){
+  document.getElementById("dartFrame").src =
+  "https://dartpad.dev/embed-dart.html?id=" + id;
+  document.getElementById("popup").style.display="flex";
+}
 
-  if (box.style.maxHeight && box.style.maxHeight !== "0px") {
-    box.style.maxHeight = "0px";
-    button.innerText = "Run di DartPad";
-  } else {
-    box.style.maxHeight = "800px";
-    button.innerText = "Tutup DartPad";
-  }
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+  document.getElementById("dartFrame").src="";
 }
 </script>
+
 </body>
 </html>
