@@ -67,6 +67,21 @@ iframe {
   margin-top: 25px;
   border: none;
 }
+  
+  .btn-preview {
+  background-color: #00ff88;
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.btn-preview:hover {
+  opacity: 0.85;
+}
 </style>
 </head>
 
@@ -99,8 +114,11 @@ Class adalah cetakan atau rancangan untuk membuat object. Object adalah hasil da
 <p>
 Aturan penulisan struktur class di Dart terdiri dari atribut dan metode. Penulisannya diawali dengan kata kunci class, kemudian nama kelas dan isi kelas ditulis di dalam tanda kurung kurawal { }. berikut contoh nya.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeCar')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeCar" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -125,8 +143,11 @@ class Car {
 <p>
 Membuat object adalah proses menghasilkan instance dari sebuah class agar dapat digunakan dalam program. Setelah object dibuat, atribut dan metode dalam class dapat diakses melalui object tersebut.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeObjek')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeObjek" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -150,8 +171,11 @@ void main() {
 <p>
 Constructor adalah metode khusus dalam class yang digunakan untuk menginisialisasi atau memberikan nilai awal pada object saat object dibuat.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeConstructors')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeContstructors" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -176,8 +200,11 @@ Latihan ini bertujuan untuk melatih pembuatan class sederhana di Dart.
 Kita membuat class Mahasiswa yang memiliki atribut seperti nama, nim, dan ipk, serta method untuk menampilkan data.
 Tujuannya agar memahami cara membuat class, membuat objek, dan memanggil method dalam konsep OOP.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeMahasiswa')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeMahasiswa" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -199,8 +226,11 @@ class Mahasiswa {
 <p>
 Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam satu class serta membatasi akses langsung ke data tersebut. Tujuannya untuk menjaga keamanan data agar tidak bisa diubah sembarangan dari luar class. Biasanya digunakan dengan membuat atribut menjadi private dan mengaksesnya melalui getter dan setter.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeEncapsulation')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeEncapsulation" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -222,7 +252,10 @@ class Person {
 this adalah kata kunci yang digunakan untuk merujuk pada object atau instance yang sedang aktif di dalam class.
 </p>
 
-<div class="preview-box">
+<button class="btn-preview" onclick="toggleBox('codeKeyword')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeKeyword" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -244,8 +277,11 @@ class Product {
 <p>
 Latihan ini bertujuan untuk membuat class Produk dengan beberapa atribut seperti id, nama, harga, dan stok, serta menggunakan constructor untuk mengisi data saat objek dibuat. Tujuannya agar memahami cara membuat class, constructor, dan membuat beberapa objek berbeda dalam konsep OOP.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeProduk')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeProduk" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -279,8 +315,11 @@ Pada program ini dibuat sebuah class bernama <b>Hewan</b> yang memiliki satu atr
 <em>nama</em> dan satu method yaitu <em>bersuara()</em>. Objek dibuat dengan nama "Ayam",
 kemudian method dipanggil untuk menampilkan output ke layar.
 </p>
-
-<div class="preview-box">
+  
+<button class="btn-preview" onclick="toggleBox('codeHewan')">
+Lihat Source Code
+</button>
+<div class="preview-box" id="codeHewan" style="display:none;">
 <pre>
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
@@ -310,6 +349,16 @@ src="https://dartpad.dev/embed-inline.html?id=598ae52104c6319fa95a5ae2002d67a5"
 ></iframe>
 
 </div>
-
+  
+<script>
+function toggleBox(id) {
+  var box = document.getElementById(id);
+  if (box.style.display === "none") {
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
