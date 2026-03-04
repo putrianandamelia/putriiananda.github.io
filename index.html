@@ -77,10 +77,18 @@ iframe {
   cursor: pointer;
   font-weight: bold;
   margin-top: 15px;
+  transition: 0.3s;
 }
 
 .btn-run:hover {
-  opacity: 0.85;
+  background-color: #ff1a8c;
+}
+
+.dart-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
 }
 </style>
 </head>
@@ -132,14 +140,15 @@ class Car {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartCar')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartCar')">
 Run di DartPad
 </button>
 
-<div id="dartCar" style="display:none;">
+<div id="dartCar" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=23472242892fdfc89f650da38e75022d"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=23472242892fdfc89f650da38e75022d"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -164,14 +173,15 @@ void main() {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartObjek')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartObjek')">
 Run di DartPad
 </button>
 
-<div id="dartObjek" style="display:none;">
+<div id="dartObjek" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=62f1da03df22947ecfecc5333e04e1f5"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=62f1da03df22947ecfecc5333e04e1f5"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -195,14 +205,15 @@ class Car {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartConstructor')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartConstructor')">
 Run di DartPad
 </button>
 
-<div id="dartConstructor" style="display:none;">
+<div id="dartConstructor" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=6580bfb376fe6cb931d6bb42573093d6"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=6580bfb376fe6cb931d6bb42573093d6"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -227,14 +238,14 @@ class Mahasiswa {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartMahasiswa')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartMahasiswa')">
 Run di DartPad
 </button>
 
-<div id="dartMahasiswa" style="display:none;">
-<iframe 
-src="https://dartpad.dev/embed-inline.html?id=2c7908b57357a9639084988ed7a3550c"></iframe>
+<div id="dartMahasiswa" class="dart-container">
+src="https://dartpad.dev/embed-flutter.html?id=2c7908b57357a9639084988ed7a3550c"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -256,14 +267,15 @@ class Person {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartEncapsulation')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartEncapsulation')">
 Run di DartPad
 </button>
 
-<div id="dartEncapsulation" style="display:none;">
+<div id="dartEncapsulation" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=a4e2c1bfae522272e2f57e3da7113a69"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=a4e2c1bfae522272e2f57e3da7113a69"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -286,14 +298,15 @@ class Product {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartKeyword')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartKeyword')">
 Run di DartPad
 </button>
 
-<div id="dartKeyword" style="display:none;">
+<div id="dartKeyword" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=6d87ddec40cc22e109c908f5079f0ab6"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=6d87ddec40cc22e109c908f5079f0ab6"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -316,14 +329,15 @@ class Produk {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartProduk')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartProduk')">
 Run di DartPad
 </button>
 
-<div id="dartProduk" style="display:none;">
+<div id="dartProduk" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=bdc1f5d0ccd35f8d7b001d20f571d577"></iframe>
+src="https://dartpad.dev/embed-flutter.html?id=bdc1f5d0ccd35f8d7b001d20f571d577"></iframe>
 </div>
+  
 </div>
 
 <div class="section">
@@ -368,24 +382,28 @@ void main() {
 </pre>
 </div>
 
-<button class="btn-run" onclick="toggleDartpad('dartHewan')">
+<button class="btn-run" onclick="toggleDartpad(this, 'dartHewan')">
 Run di DartPad
 </button>
 
-<div id="dartHewan" style="display:none;">
+<div id="dartHewan" class="dart-container">
 <iframe 
-src="https://dartpad.dev/embed-inline.html?id=598ae52104c6319fa95a5ae2002d67a5"
+src="https://dartpad.dev/embed-flutter.html?id=598ae52104c6319fa95a5ae2002d67a5"
 ></iframe>
+</div>
 
 </div>
   
 <script>
-function toggleBox(id) {
+function toggleBox(button, id) {
   var box = document.getElementById(id);
-  if (box.style.display === "none") {
-    box.style.display = "block";
+
+  if (box.style.maxHeight && box.style.maxHeight !== "0px") {
+    box.style.maxHeight = "0px";
+    button.innerText = "Run di DartPad";
   } else {
-    box.style.display = "none";
+    box.style.maxHeight = "800px";
+    button.innerText = "Tutup DartPad";
   }
 }
 </script>
