@@ -169,6 +169,7 @@ Membuat object adalah proses menghasilkan instance dari sebuah class agar dapat 
   
 void main() {
   Car myCar = Car();
+  
   myCar.model = "Sedan";
   myCar.color = "Merah";
 
@@ -200,6 +201,10 @@ class Car {
   String? color;
 
   Car(this.model, this.color);
+
+  void start() {
+    print('Engine Online: $model');
+  }
 }
 </pre>
 </div>
@@ -222,11 +227,17 @@ Tujuannya agar memahami cara membuat class, membuat objek, dan memanggil method 
 // Nama  : Putri Ananda Amelia
 // NIM   : 251410029
 // Kelas : SI2A
-  
-class Mahasiswa {
+
+  class Mahasiswa {
   String nama;
   String nim;
   double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk);
+
+  void tampilkanData() {
+    print('NAMA : $nama | NIM : $nim | IPK : $ipk');
+  }
 }
 </pre>
 </div>
@@ -250,13 +261,13 @@ Encapsulation adalah konsep OOP yang membungkus data (atribut) dan method dalam 
   
 class Person {
   String _name;
-  int _age;
+  int age;
 
   Person(this._name, this.age);
 
-  void setName(String name) { _name = name;
-  String getName() {
-  return_name;
+  void setName(String name) => _name = name;
+  
+  String getName() => _name;
 }
 </pre>
 </div>
@@ -304,8 +315,7 @@ Latihan ini bertujuan untuk membuat class Produk dengan beberapa atribut seperti
 // Kelas : SI2A
   
 class Produk {
-  final String id;
-  final String nama;
+  final String id, nama;
   final double harga;
   final int stok;
   final String kategori;
@@ -314,9 +324,10 @@ class Produk {
     required this.id,
     required this.nama,
     required this.harga,
-    this.stok = 0
+    this.stok = 0,
     this.kategori = 'Umum',
   });
+}
     
 </pre>
 </div>
